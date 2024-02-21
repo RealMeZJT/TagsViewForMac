@@ -11,6 +11,8 @@
 		6F91E1CF2B85A375003AD3F3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F91E1CE2B85A375003AD3F3 /* ContentView.swift */; };
 		6F91E1D12B85A377003AD3F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F91E1D02B85A377003AD3F3 /* Assets.xcassets */; };
 		6F91E1D42B85A377003AD3F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F91E1D32B85A377003AD3F3 /* Preview Assets.xcassets */; };
+		6F91E1DC2B85A3AC003AD3F3 /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F91E1DB2B85A3AC003AD3F3 /* TagsView.swift */; };
+		6F91E1DF2B85A3F7003AD3F3 /* TagCapsuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F91E1DE2B85A3F7003AD3F3 /* TagCapsuleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		6F91E1D02B85A377003AD3F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F91E1D32B85A377003AD3F3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6F91E1D52B85A377003AD3F3 /* TagsViewForMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TagsViewForMac.entitlements; sourceTree = "<group>"; };
+		6F91E1DB2B85A3AC003AD3F3 /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
+		6F91E1DE2B85A3F7003AD3F3 /* TagCapsuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCapsuleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,7 @@
 		6F91E1CB2B85A375003AD3F3 /* TagsViewForMac */ = {
 			isa = PBXGroup;
 			children = (
+				6F91E1DD2B85A3C7003AD3F3 /* TagsView */,
 				6F91E1CC2B85A375003AD3F3 /* TagsViewForMacApp.swift */,
 				6F91E1CE2B85A375003AD3F3 /* ContentView.swift */,
 				6F91E1D02B85A377003AD3F3 /* Assets.xcassets */,
@@ -67,6 +72,15 @@
 				6F91E1D32B85A377003AD3F3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6F91E1DD2B85A3C7003AD3F3 /* TagsView */ = {
+			isa = PBXGroup;
+			children = (
+				6F91E1DB2B85A3AC003AD3F3 /* TagsView.swift */,
+				6F91E1DE2B85A3F7003AD3F3 /* TagCapsuleView.swift */,
+			);
+			path = TagsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +155,8 @@
 			files = (
 				6F91E1CF2B85A375003AD3F3 /* ContentView.swift in Sources */,
 				6F91E1CD2B85A375003AD3F3 /* TagsViewForMacApp.swift in Sources */,
+				6F91E1DC2B85A3AC003AD3F3 /* TagsView.swift in Sources */,
+				6F91E1DF2B85A3F7003AD3F3 /* TagCapsuleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

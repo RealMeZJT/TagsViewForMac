@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var tags = ["a","b","js","ab","cb","cb2"]
     var body: some View {
         VStack {
+            TagsView(tags: $tags)
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
