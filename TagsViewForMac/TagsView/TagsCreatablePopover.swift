@@ -52,7 +52,7 @@ struct TagsCreatablePopover: View {
                     }
                 
             }
-            .frame(minWidth: 180, minHeight: 300,alignment: .topLeading)
+            .frame(minWidth: 180, minHeight: 200,alignment: .topLeading)
         }
     }
     
@@ -62,11 +62,13 @@ struct TagsCreatablePopover: View {
             ForEach(items,id: \.self) { item in
                 HStack {
                     Text(item)
+                        .frame(maxWidth: .infinity,alignment: .leading)
                     if (item == selection) {
                         Image(systemName: "checkmark")
                             .foregroundColor(.accentColor)
                     }
                 }
+                .contentShape(Rectangle())
                 .onTapGesture {
                     onSelectedTag(item)
                     isPresented = false

@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var allTags = ["a","b","js","ab","cb","cb2"]
-    @State var selections = ["js","ab"]
+    @State var allTags = ["swift","ios","apple","macos","js","game"]
+    @State var selections = ["apple","macos"]
     
     @State private var showWarning = false
     
