@@ -14,15 +14,22 @@ struct ContentView: View {
     @State private var showWarning = false
     
     var body: some View {
+        
         VStack {
-            TagsView(allTgas: allTags, selections: $selections) { newTag in
+            //不可创建新标签
+            TagsView(allTgas: allTags, selections: $selections)
+            
+            Divider()
+            
+            //可创建新标签
+            TagsView(allTgas: allTags, selections: $selections, newTagAction:  { newTag in
                 if doSomeCheck(newTag) { // 可以根据业务，对新标签做一些合法性校验
                     allTags.append(newTag)
                     selections.append(newTag)
                 } else {
                     showWarning = true
                 }
-            }
+            })
             
             if showWarning {
                 Text("不合规的标签名")

@@ -32,7 +32,7 @@ struct TagsStack: View {
     @ViewBuilder
     private func eachTags() -> some View {
         ForEach(tags, id: \.self) { item in
-            TagCapsuleView(text: item,onRemove: {
+            TagCapsuleView(text: item,willRemove: {
                 tags.removeAll(where: {$0 == item})
             })
         }

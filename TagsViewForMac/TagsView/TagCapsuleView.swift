@@ -11,7 +11,7 @@ struct TagCapsuleView: View {
     let text: String
     let textColor = Color.black
     let bgColor = Color.gray.opacity(0.3)
-    var onRemove: (()->Void)?
+    var willRemove: (()->Void)?
     @State private var hovering = false
     var body: some View {
 
@@ -22,12 +22,12 @@ struct TagCapsuleView: View {
             .background(bgColor)
             .clipShape(.capsule)
             .overlay(alignment: .trailing) {
-                if hovering && onRemove != nil {
+                if hovering && willRemove != nil {
                     Image(systemName: "x.circle.fill")
                         .foregroundStyle(Color.red)
                         .padding(2)
                         .onTapGesture(perform: {
-                            onRemove?()
+                            willRemove?()
                         })
                 }
             }
@@ -43,7 +43,7 @@ struct TagCapsuleView: View {
 #Preview {
     Group {
         TagCapsuleView(text: "hello")
-        TagCapsuleView(text: "hello2",onRemove: {
+        TagCapsuleView(text: "hello2",willRemove: {
             
         })
     }

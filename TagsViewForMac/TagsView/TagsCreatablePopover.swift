@@ -11,14 +11,14 @@ struct TagsCreatablePopover: View {
     @Binding var isPresented: Bool
     var items: [String]
     var onSelectedTag: ((String)->Void)
-    var onNewTag: ((String)->Void)?
+    var newTagAction: ((String)->Void)?
 
     @State private var selection: String = ""
     @State private var searchText = ""
     private var shouldNewTag: Bool {
         !searchText.isEmpty
             && selection != searchText
-            && onNewTag != nil
+            && newTagAction != nil
     }
     
     var body: some View {
@@ -35,7 +35,7 @@ struct TagsCreatablePopover: View {
             
             if shouldNewTag {
                 Button("创建新标签 “\(searchText)”") {
-                    onNewTag?(searchText)
+                    _ = newTagAction?(searchText)
                     isPresented = false
                 }
                 .buttonStyle(PlainButtonStyle())
@@ -95,8 +95,8 @@ struct TagsCreatablePopover: View {
 }
 
 #Preview {
-    TagsCreatablePopover(isPresented: .constant(true), items: ["a1","a2","b1"], onSelectedTag: {tag in }, onNewTag: { newTag in
-        
+    TagsCreatablePopover(isPresented: .constant(true), items: ["a1","a2","b1"], onSelectedTag: {tag in }, newTagAction: { newTag in
+
     })
         .frame(width: 300)
 }

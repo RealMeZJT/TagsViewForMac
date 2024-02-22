@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct TagsView: View {
+    
     let allTgas: [String]
     @Binding var selections: [String]
     
-    var onNewTag: ((String)->Void)?
+    /**该block不为空时，用户搜索的标签不存在时，会在显示创建按钮。
+        TagsView并不会创建标签，而是把用户意图通知给外部。
+     */
+    var newTagAction: ((String)->Void)?
     
     @State private var showAddingTag = false
     var body: some View {
@@ -26,7 +30,7 @@ struct TagsView: View {
                     if !selections.contains(tag) {
                         selections.append(tag)
                     }
-                }, onNewTag: onNewTag)
+                }, newTagAction: newTagAction)
             })
             
             TagsStack(tags: $selections)
